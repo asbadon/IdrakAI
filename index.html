@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Idrak AI | AI Enablement & Integration (UAE)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <div class="logo" aria-hidden="true">
+        <img src="Logo-IdrakS.png" alt="" />
+      </div>
+      <div>
+        <h1>Idrak AI <small>Enable • Integrate • Operationalize</small></h1>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">Why Idrak</a>
+      <a href="portal.html">Portal</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <div id="authArea"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="card hero-card">
+        <div class="kicker">UAE-based, enterprise-grade AI delivery</div>
+        <h2>From AI ideas to secure, reliable systems embedded in real operations.</h2>
+        <p class="lead">
+          Idrak AI enables, integrates, and operationalizes AI across complex enterprise environments—connecting solutions to your
+          ERP/CRM, portals, contact centers, and data platforms with strong governance and security.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="services.html">Explore Services</a>
+          <a class="btn" href="login.html">Customer Login</a>
+          <a class="btn" href="about.html">How We Reduce Risk</a>
+        </div>
+      </div>
+
+      <aside class="card hero-side" aria-label="Key outcomes">
+        <div class="metric">
+          <strong>Execution + Integration Focus</strong>
+          <span>Production solutions—not demos—connected to workflows and users.</span>
+        </div>
+        <div class="metric">
+          <strong>Security-by-design & Responsible AI</strong>
+          <span>Privacy, auditability, access controls, and guardrails.</span>
+        </div>
+        <div class="metric">
+          <strong>MLOps & lifecycle controls</strong>
+          <span>Monitoring, drift detection, retraining pipelines, versioned releases.</span>
+        </div>
+        <div class="metric">
+          <strong>Measurable KPIs</strong>
+          <span>Accuracy, latency, availability, cost/tx, adoption rates, SLA improvements.</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3>What we deliver</h3>
+      <div class="grid-3">
+        <div class="card feature">
+          <h4>AI Enablement & Integration</h4>
+          <p>Use-case discovery, data readiness, GenAI assistants, and API-first integration into enterprise platforms.</p>
+        </div>
+        <div class="card feature">
+          <h4>Software Development & Delivery</h4>
+          <p>Web/mobile apps, integration services, modernization, CI/CD, testing, and release governance for predictable outcomes.</p>
+        </div>
+        <div class="card feature">
+          <h4>End-to-End AI IT Solutions</h4>
+          <p>Cloud/data platforms, secure reference architectures, and support models aligned to enterprise standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="card panel">
+        <div class="row">
+          <div>
+            <h3 style="margin:0 0 6px;">Customer Support Portal</h3>
+            <p style="margin:0; color: var(--muted);">
+              Login to log cases and track your requests.
+            </p>
+          </div>
+          <div class="row" style="gap:10px;">
+            <a class="btn primary" href="login.html">Login</a>
+            <a class="btn" href="portal.html">Go to Portal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(234,240,255,0.9);">Idrak AI (UAE)</p>
+      <p style="margin:0;">
+        AI enablement, integration, and operational delivery across regulated, complex enterprise environments.
+      </p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(234,240,255,0.9);">Navigation</p>
+      <p style="margin:0;"><a href="services.html">Services</a></p>
+      <p style="margin:0;"><a href="about.html">Why Idrak</a></p>
+      <p style="margin:0;"><a href="portal.html">Portal</a></p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(234,240,255,0.9);">Contact</p>
+      <p style="margin:0;">Email: <a href="mailto:info@idrak.ai">info@idrak.ai</a></p>
+      <p style="margin:0;">Location: UAE</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    © <span id="year"></span> Idrak AI. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
