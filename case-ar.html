@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>إدراك للذكاء الاصطناعي | تسجيل بلاغ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">انتقال إلى المحتوى</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index-ar.html">
+      <div class="logo" aria-hidden="true">
+        <img src="Logo-IdrakS.png" alt="شعار إدراك للذكاء الاصطناعي" />
+      </div>
+      <div><h1>إدراك للذكاء الاصطناعي <small>تمكين • تكامل • تشغيل</small></h1></div>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="القائمة الرئيسية">
+      <a href="index-ar.html">الرئيسية</a>
+      <a href="services-ar.html">الخدمات</a>
+      <a href="about-ar.html">لماذا إدراك</a>
+      <a href="portal-ar.html">البوابة</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn mobile-toggle" id="mobileToggle" aria-label="إظهار القائمة" aria-expanded="false">☰</button>
+      <a class="btn" href="case.html">English</a>
+      <div id="authArea"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container" style="display:grid; gap: 14px;">
+      <div class="card panel">
+        <div class="row">
+          <div>
+            <h3 style="margin:0 0 6px;">تسجيل بلاغ دعم</h3>
+            <p style="margin:0; color: var(--muted);">يرجى تزويدنا بالتفاصيل اللازمة ليتمكن فريقنا من المتابعة.</p>
+          </div>
+          <a class="btn" href="portal-ar.html">العودة إلى البوابة</a>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <form class="form" id="caseForm">
+          <div class="field">
+            <label for="customerEmail">البريد الإلكتروني للعميل</label>
+            <input id="customerEmail" name="customerEmail" type="email" readonly />
+            <div class="helper">يتم جلب هذه القيمة من جلسة تسجيل الدخول.</div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="caseCategory">الفئة</label>
+              <select id="caseCategory" name="category">
+                <option>تمكين وتكامل الذكاء الاصطناعي</option>
+                <option>الذكاء الاصطناعي التوليدي / المساعد المعرفي</option>
+                <option>إدارة دورة حياة النماذج ومراقبتها</option>
+                <option>التكامل / واجهات برمجية</option>
+                <option>تسليم برمجيات</option>
+                <option>أخرى</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="casePriority">الأولوية</label>
+              <select id="casePriority" name="priority">
+                <option>منخفضة</option>
+                <option selected>متوسطة</option>
+                <option>مرتفعة</option>
+                <option>حرجة</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="caseTitle">عنوان البلاغ</label>
+            <input id="caseTitle" name="title" placeholder="مثال: مشكلة في الوصول إلى البوابة / طلب تكامل / تنبيه عن انجراف نموذج" required />
+          </div>
+
+          <div class="field">
+            <label for="caseDescription">الوصف</label>
+            <textarea id="caseDescription" name="description" placeholder="أضف الخطوات، الأثر، البيئة، الأوقات، وأي روابط ذات صلة." required></textarea>
+          </div>
+
+          <div id="caseMsg" class="card panel" style="display:none; box-shadow:none;"></div>
+
+          <div class="row">
+            <button class="btn primary" type="submit">إرسال البلاغ</button>
+            <a class="btn" href="portal-ar.html">عرض بلاغاتي</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">إدراك للذكاء الاصطناعي (الإمارات)</p>
+      <p style="margin:0;">أمن حسب التصميم، حوكمة تسليم، واستعداد للإنتاج.</p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">التصفح</p>
+      <p style="margin:0;"><a href="index-ar.html">الرئيسية</a></p>
+      <p style="margin:0;"><a href="services-ar.html">الخدمات</a></p>
+      <p style="margin:0;"><a href="portal-ar.html">البوابة</a></p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">التواصل</p>
+      <p style="margin:0;">البريد الإلكتروني: <a href="mailto:info@idrak.ai">info@idrak.ai</a></p>
+      <p style="margin:0;">الموقع: الإمارات العربية المتحدة</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">© <span id="year"></span> إدراك للذكاء الاصطناعي. جميع الحقوق محفوظة.</div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
+

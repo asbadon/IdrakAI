@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>إدراك للذكاء الاصطناعي | تسجيل الدخول</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">انتقال إلى المحتوى</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index-ar.html">
+      <div class="logo" aria-hidden="true">
+        <img src="Logo-IdrakS.png" alt="شعار إدراك للذكاء الاصطناعي" />
+      </div>
+      <div><h1>إدراك للذكاء الاصطناعي <small>تمكين • تكامل • تشغيل</small></h1></div>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="القائمة الرئيسية">
+      <a href="index-ar.html">الرئيسية</a>
+      <a href="services-ar.html">الخدمات</a>
+      <a href="about-ar.html">لماذا إدراك</a>
+      <a href="portal-ar.html">البوابة</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn mobile-toggle" id="mobileToggle" aria-label="إظهار القائمة" aria-expanded="false">☰</button>
+      <a class="btn" href="login.html">English</a>
+      <div id="authArea"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container" style="display:grid; place-items:center;">
+      <div class="card panel" style="width:min(520px, 100%);">
+        <h3 style="margin:0 0 6px;">تسجيل دخول العملاء</h3>
+        <p style="margin:0 0 14px; color: var(--muted);">
+          سيتم تزويدكم بمعلومات الدخول من قبل مدير حسابكم.
+        </p>
+
+        <form class="form" id="loginForm">
+          <div class="field">
+            <label for="email">البريد الإلكتروني</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="password">كلمة المرور</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required minlength="4" />
+            <div class="helper">نشكر لكم صبركم بينما نعمل على إكمال عملية المصادقة.</div>
+          </div>
+
+          <div id="loginError" class="card panel" style="display:none; box-shadow:none; border-color: rgba(239,68,68,0.45); background: rgba(239,68,68,0.12);">
+            بيانات الدخول غير صحيحة.
+          </div>
+
+          <div class="row">
+            <button class="btn primary" type="submit">تسجيل الدخول</button>
+            <a class="btn" href="index-ar.html">العودة للرئيسية</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">إدراك للذكاء الاصطناعي (الإمارات)</p>
+      <p style="margin:0;">حلول ذكاء اصطناعي آمنة ومتكاملة وقابلة للقياس.</p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">التصفح</p>
+      <p style="margin:0;"><a href="services-ar.html">الخدمات</a></p>
+      <p style="margin:0;"><a href="about-ar.html">لماذا إدراك</a></p>
+      <p style="margin:0;"><a href="portal-ar.html">البوابة</a></p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">التواصل</p>
+      <p style="margin:0;">البريد الإلكتروني: <a href="mailto:info@idrak.ai">info@idrak.ai</a></p>
+      <p style="margin:0;">الموقع: الإمارات العربية المتحدة</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">© <span id="year"></span> إدراك للذكاء الاصطناعي. جميع الحقوق محفوظة.</div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
