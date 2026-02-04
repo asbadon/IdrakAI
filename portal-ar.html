@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>إدراك للذكاء الاصطناعي | بوابة العملاء</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">انتقال إلى المحتوى</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index-ar.html">
+      <div class="logo" aria-hidden="true">
+        <img src="Logo-IdrakS.png" alt="شعار إدراك للذكاء الاصطناعي" />
+      </div>
+      <div><h1>إدراك للذكاء الاصطناعي <small>تمكين • تكامل • تشغيل</small></h1></div>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="القائمة الرئيسية">
+      <a href="index-ar.html">الرئيسية</a>
+      <a href="services-ar.html">الخدمات</a>
+      <a href="about-ar.html">لماذا إدراك</a>
+      <a href="portal-ar.html">البوابة</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn mobile-toggle" id="mobileToggle" aria-label="إظهار القائمة" aria-expanded="false">☰</button>
+      <a class="btn" href="portal.html">English</a>
+      <div id="authArea"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section">
+    <div class="container" id="portalRoot">
+      <div class="card panel">
+        <div class="row">
+          <div>
+            <h3 style="margin:0 0 6px;">بوابة العملاء</h3>
+            <p style="margin:0; color: var(--muted);">
+              تم تسجيل الدخول باسم <span class="badge" id="welcomeEmail"></span>
+            </p>
+          </div>
+          <div class="row" style="gap:10px;">
+            <a class="btn primary" href="case-ar.html">تسجيل بلاغ جديد</a>
+            <a class="btn" href="services-ar.html">الخدمات</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="section" style="padding-bottom: 0;">
+        <h3 style="margin:0 0 10px;">بلاغاتك</h3>
+        <div id="casesEmpty" class="card panel" style="display:none; box-shadow:none;">
+          لا توجد بلاغات حالياً. اضغط على <strong>تسجيل بلاغ جديد</strong> لإنشاء طلبك الأول.
+        </div>
+
+        <table class="table" aria-label="جدول البلاغات">
+          <thead>
+            <tr>
+              <th>رقم البلاغ</th>
+              <th>العنوان</th>
+              <th>الفئة</th>
+              <th>الأولوية</th>
+              <th>الحالة</th>
+              <th>تاريخ الإنشاء</th>
+            </tr>
+          </thead>
+          <tbody id="casesBody"></tbody>
+        </table>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">إدراك للذكاء الاصطناعي (الإمارات)</p>
+      <p style="margin:0;">تسليم حلول ذكاء اصطناعي تشغيلية مع حوكمة وأمن ومؤشرات أداء واضحة.</p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">التصفح</p>
+      <p style="margin:0;"><a href="index-ar.html">الرئيسية</a></p>
+      <p style="margin:0;"><a href="services-ar.html">الخدمات</a></p>
+      <p style="margin:0;"><a href="about-ar.html">لماذا إدراك</a></p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">التواصل</p>
+      <p style="margin:0;">البريد الإلكتروني: <a href="mailto:info@idrak.ai">info@idrak.ai</a></p>
+      <p style="margin:0;">الهاتف: <a href="tel:+971543200406">+971 54 320 0406</a></p>
+      <p style="margin:0;">العنوان: مركز المرقبات واربا</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">© <span id="year"></span> إدراك للذكاء الاصطناعي. جميع الحقوق محفوظة.</div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
