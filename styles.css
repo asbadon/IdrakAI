@@ -177,6 +177,40 @@ header{
   border-radius: 12px;
 }
 
+/* Hero banner under main menu — responsive, works on mobile */
+.hero-banner{
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  line-height: 0;
+}
+.hero-banner img{
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Section image (e.g. services workflow) — under first paragraph, above content blocks */
+.section-image{
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  padding: 0 0 8px;
+}
+.section-image .container{ padding: 0; width: min(var(--max), calc(100% - 40px)); }
+.section-image img{
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+}
+
 .hero{
   padding: 56px 0 24px;
 }
@@ -390,8 +424,14 @@ footer a:hover{ color: var(--text); }
     -webkit-overflow-scrolling: touch;
   }
   .table-wrapper .table{ min-width: 560px; }
+
+  .hero-banner img{ max-height: 42vh; object-fit: cover; }
+  .section-image img{ max-height: 38vh; object-fit: cover; }
 }
 @media (max-width: 480px){
+  .hero-banner img{ max-height: 36vh; }
+  .section-image img{ max-height: 32vh; }
+  .section-image .container{ width: calc(100% - 24px); }
   .container{ width: calc(100% - 24px); }
   .brand small{ display: none; }
 }
