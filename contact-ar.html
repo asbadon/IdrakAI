@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>إدراك للذكاء الاصطناعي | تسجيل الدخول</title>
+  <title>إدراك للذكاء الاصطناعي | اتصل بنا</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
@@ -29,7 +30,7 @@
 
     <div class="nav-actions">
       <button class="btn mobile-toggle" id="mobileToggle" aria-label="إظهار القائمة" aria-expanded="false">☰</button>
-      <a class="btn" href="login.html">English</a>
+      <a class="btn" href="contact.html">English</a>
       <div id="authArea"></div>
     </div>
   </div>
@@ -38,30 +39,37 @@
 <main id="main">
   <section class="section">
     <div class="container" style="display:grid; place-items:center;">
-      <div class="card panel" style="width:min(520px, 100%);">
-        <h3 style="margin:0 0 6px;">تسجيل دخول العملاء</h3>
-        <p style="margin:0 0 14px; color: var(--muted);">
-          سيتم تزويدكم بمعلومات الدخول من قبل مدير حسابكم.
+      <div class="card panel" style="width:min(600px, 100%);">
+        <h3 style="margin:0 0 6px;">اتصل بنا</h3>
+        <p style="margin:0 0 18px; color: var(--muted);">
+          تواصل مع فريقنا. سنرد في أقرب وقت ممكن.
         </p>
 
-        <form class="form" id="loginForm">
+        <form class="form" id="contactForm">
           <div class="field">
-            <label for="email">البريد الإلكتروني</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
+            <label for="contactName">الاسم</label>
+            <input id="contactName" name="name" type="text" required />
           </div>
 
           <div class="field">
-            <label for="password">كلمة المرور</label>
-            <input id="password" name="password" type="password" autocomplete="current-password" required minlength="4" />
-            <div class="helper">نشكر لكم صبركم بينما نعمل على إكمال عملية المصادقة.</div>
+            <label for="contactEmail">البريد الإلكتروني</label>
+            <input id="contactEmail" name="email" type="email" autocomplete="email" required />
           </div>
 
-          <div id="loginError" class="card panel" style="display:none; box-shadow:none; border-color: rgba(239,68,68,0.45); background: rgba(239,68,68,0.12);">
-            بيانات الدخول غير صحيحة.
+          <div class="field">
+            <label for="contactSubject">الموضوع</label>
+            <input id="contactSubject" name="title" type="text" required />
           </div>
+
+          <div class="field">
+            <label for="contactMessage">الرسالة</label>
+            <textarea id="contactMessage" name="message" rows="6" required></textarea>
+          </div>
+
+          <div id="contactMsg" class="card panel" style="display:none; box-shadow:none;"></div>
 
           <div class="row">
-            <button class="btn primary" type="submit">تسجيل الدخول</button>
+            <button class="btn primary" type="submit">إرسال الرسالة</button>
             <a class="btn" href="index-ar.html">العودة للرئيسية</a>
           </div>
         </form>
@@ -74,7 +82,9 @@
   <div class="container footer-grid">
     <div>
       <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">إدراك للذكاء الاصطناعي (الإمارات)</p>
-      <p style="margin:0;">حلول ذكاء اصطناعي آمنة ومتكاملة وقابلة للقياس.</p>
+      <p style="margin:0;">
+        تمكين وتكامل وتشغيل حلول الذكاء الاصطناعي في بيئات مؤسسية منظمة ومعقدة.
+      </p>
     </div>
     <div>
       <p style="margin:0 0 8px; font-weight:800; color:rgba(15,23,42,0.9);">التصفح</p>
@@ -96,4 +106,3 @@
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
-

@@ -222,8 +222,97 @@ function escapeHtml(str) {
     .replaceAll("'","&#039;");
 }
 
+function setupContactPage() {
+  const form = $("#contactForm");
+  if (!form) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = $("#contactName").value.trim();
+    const email = $("#contactEmail").value.trim();
+    const title = $("#contactSubject").value.trim();
+    const message = $("#contactMessage").value.trim();
+    const msgDiv = $("#contactMsg");
+
+    if (!name || !email || !title || !message) {
+      msgDiv.textContent = document.documentElement.lang === "ar" 
+        ? "يرجى ملء جميع الحقول." 
+        : "Please fill in all fields.";
+      msgDiv.style.display = "block";
+      msgDiv.style.borderColor = "rgba(239,68,68,0.45)";
+      msgDiv.style.background = "rgba(239,68,68,0.12)";
+      return;
+    }
+
+    if (!email.includes("@")) {
+      msgDiv.textContent = document.documentElement.lang === "ar"
+        ? "يرجى إدخال بريد إلكتروني صحيح."
+        : "Please enter a valid email address.";
+      msgDiv.style.display = "block";
+      msgDiv.style.borderColor = "rgba(239,68,68,0.45)";
+      msgDiv.style.background = "rgba(239,68,68,0.12)";
+      return;
+    }
+
+    // Get current date and time
+    const now = new Date();
+    const time = now.toLocaleString(document.documentElement.lang === "ar" ? "ar-AE" : "en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZoneName: "short"
+    });
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = document.documentElement.lang === "ar" ? "جاري الإرسال..." : "Sending...";
+
+    try {
+      if (typeof emailjs === 'undefined') {
+        throw new Error("EmailJS not loaded");
+      }
+
+      await emailjs.send("service_yz5x9nr", "template_hnneby6", {
+        title: title,
+        name: name,
+        message: message,
+        time: time,
+        email: email
+      });
+
+      msgDiv.textContent = document.documentElement.lang === "ar"
+        ? "تم إرسال رسالتك بنجاح. سنرد عليك قريباً."
+        : "Your message has been sent successfully. We'll get back to you soon.";
+      msgDiv.style.display = "block";
+      msgDiv.style.borderColor = "rgba(34,197,94,0.45)";
+      msgDiv.style.background = "rgba(34,197,94,0.12)";
+      form.reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      msgDiv.textContent = document.documentElement.lang === "ar"
+        ? "حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى أو التواصل عبر البريد الإلكتروني."
+        : "An error occurred while sending. Please try again or contact us via email.";
+      msgDiv.style.display = "block";
+      msgDiv.style.borderColor = "rgba(239,68,68,0.45)";
+      msgDiv.style.background = "rgba(239,68,68,0.12)";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+}
+
 // Init
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize EmailJS if available
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init("YvZvwxZYgvwNnI5bN");
+  }
+
   setActiveNav();
   setupMobileNav();
   setupAuthUI();
@@ -231,4 +320,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupLoginPage();
   setupPortalPage();
   setupCasePage();
+  setupContactPage();
 });
