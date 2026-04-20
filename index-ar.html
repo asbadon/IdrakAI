@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>إدراك للذكاء الاصطناعي | التمكين والتكامل (الإمارات)</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./app.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">انتقال إلى المحتوى</a>
@@ -37,12 +37,14 @@
   </div>
 </header>
 
-<!-- عرض شرائح: أضف صوراً بـ <img class="hero-rotator-slide" ... /> — الأزرار الرقمية تُبنى في app.js -->
+<!-- عرض شرائح: ضع الصور داخل .hero-rotator-track — النقاط تُبنى في app.js -->
 <div class="hero-banner hero-rotator" data-hero-rotator data-interval="5000" role="region" aria-roledescription="carousel" aria-label="معرض الصور">
   <button type="button" class="hero-rotator-btn hero-rotator-prev" aria-label="الصورة السابقة">‹</button>
   <button type="button" class="hero-rotator-btn hero-rotator-next" aria-label="الصورة التالية">›</button>
-  <img class="hero-rotator-slide is-active" src="assets/idrak-uae-celebration-banner.png" alt="إدراك للذكاء الاصطناعي — فخورون بالإمارات" loading="eager" />
-  <img class="hero-rotator-slide" src="assets/hero-hr-banner.png" alt="إدراك للذكاء الاصطناعي — حلول الذكاء الاصطناعي" loading="eager" />
+  <div class="hero-rotator-track">
+    <img class="hero-rotator-slide is-active" src="./assets/idrak-uae-celebration-banner.png" alt="إدراك للذكاء الاصطناعي — فخورون بالإمارات" loading="eager" />
+    <img class="hero-rotator-slide" src="./assets/hero-hr-banner.png" alt="إدراك للذكاء الاصطناعي — حلول الذكاء الاصطناعي" loading="eager" />
+  </div>
   <div class="hero-rotator-dots" role="tablist" aria-label="اختيار الصورة"></div>
 </div>
 

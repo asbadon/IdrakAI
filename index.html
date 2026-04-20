@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Idrak AI | AI Enablement & Integration (UAE)</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./app.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -37,12 +37,14 @@
   </div>
 </header>
 
-<!-- Carousel: add slides with <img class="hero-rotator-slide" ... /> — numbered buttons below are built in app.js -->
+<!-- Carousel: add slides inside .hero-rotator-track — dots built in app.js -->
 <div class="hero-banner hero-rotator" data-hero-rotator data-interval="5000" role="region" aria-roledescription="carousel" aria-label="Featured banners">
   <button type="button" class="hero-rotator-btn hero-rotator-prev" aria-label="Previous banner">‹</button>
   <button type="button" class="hero-rotator-btn hero-rotator-next" aria-label="Next banner">›</button>
-  <img class="hero-rotator-slide is-active" src="assets/idrak-uae-celebration-banner.png" alt="Idrak AI — Proud of UAE" loading="eager" />
-  <img class="hero-rotator-slide" src="assets/hero-hr-banner.png" alt="Idrak AI — Solutions for Artificial Intelligence" loading="eager" />
+  <div class="hero-rotator-track">
+    <img class="hero-rotator-slide is-active" src="./assets/idrak-uae-celebration-banner.png" alt="Idrak AI — Proud of UAE" loading="eager" />
+    <img class="hero-rotator-slide" src="./assets/hero-hr-banner.png" alt="Idrak AI — Solutions for Artificial Intelligence" loading="eager" />
+  </div>
   <div class="hero-rotator-dots" role="tablist" aria-label="Choose banner"></div>
 </div>
 
