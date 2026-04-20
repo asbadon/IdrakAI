@@ -306,6 +306,92 @@ function setupContactPage() {
   });
 }
 
+/** Hero carousel: `[data-hero-rotator]` with `img.hero-rotator-slide`, optional prev/next, `.hero-rotator-dots` filled here. */
+function setupHeroRotator() {
+  const rotators = $all("[data-hero-rotator]");
+  if (rotators.length === 0) return;
+
+  const prefersReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isAr = document.documentElement.getAttribute("lang") === "ar";
+
+  rotators.forEach(root => {
+    const slides = $all("img.hero-rotator-slide", root);
+    if (slides.length < 2) return;
+
+    let idx = Math.max(0, slides.findIndex(s => s.classList.contains("is-active")));
+    if (idx === -1) idx = 0;
+
+    const intervalMs = Number(root.getAttribute("data-interval")) || 5000;
+    const prevBtn = $(".hero-rotator-prev", root);
+    const nextBtn = $(".hero-rotator-next", root);
+    const dotsRoot = $(".hero-rotator-dots", root);
+
+    const dotButtons = [];
+    if (dotsRoot) {
+      dotsRoot.innerHTML = "";
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "hero-rotator-dot";
+        b.setAttribute("role", "tab");
+        b.setAttribute("aria-selected", i === idx ? "true" : "false");
+        b.setAttribute(
+          "aria-label",
+          isAr ? `عرض الصورة ${i + 1} من ${slides.length}` : `Show banner ${i + 1} of ${slides.length}`
+        );
+        b.addEventListener("click", () => {
+          goTo(i);
+          scheduleAuto();
+        });
+        dotsRoot.appendChild(b);
+        dotButtons.push(b);
+      });
+    }
+
+    function syncDots() {
+      dotButtons.forEach((b, i) => {
+        b.classList.toggle("is-active", i === idx);
+        b.setAttribute("aria-selected", i === idx ? "true" : "false");
+      });
+    }
+
+    function goTo(nextIdx) {
+      const n = slides.length;
+      const i = ((nextIdx % n) + n) % n;
+      slides[idx].classList.remove("is-active");
+      slides[i].classList.add("is-active");
+      idx = i;
+      syncDots();
+    }
+
+    let timer = null;
+    function scheduleAuto() {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+      if (prefersReduced) return;
+      timer = window.setInterval(() => goTo(idx + 1), intervalMs);
+    }
+
+    slides.forEach((s, i) => s.classList.toggle("is-active", i === idx));
+    syncDots();
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        goTo(idx - 1);
+        scheduleAuto();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        goTo(idx + 1);
+        scheduleAuto();
+      });
+    }
+
+    scheduleAuto();
+  });
+}
+
 // Init
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize EmailJS if available
@@ -321,4 +407,5 @@ document.addEventListener("DOMContentLoaded", () => {
   setupPortalPage();
   setupCasePage();
   setupContactPage();
+  setupHeroRotator();
 });
